@@ -29,9 +29,7 @@ namespace Client
             {
                 s.Connect(ep);
 
-                if (s.Connected)
-                {
-                    while (true)
+                    while (s.Connected)
                     {
                         byte[] buffer = new byte[1024];
                         int l = s.Receive(buffer);
@@ -39,9 +37,6 @@ namespace Client
                         //LabelTime.Text = message;
                         Invoke(new Action(() => LabelTime.Text = message));
                     }
-
-                }
-                else { s.Close(); }
             }
             catch { }
 

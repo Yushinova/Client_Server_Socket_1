@@ -42,7 +42,7 @@ namespace Server
             }
             async void UpdateTime(Socket socket)
             {
-                // Socket socket = obj as Socket;
+                //если клиент разорвал подключение падает прога без try catch
                 while (socket.Connected)
                 {
                     try
